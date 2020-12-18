@@ -1,1 +1,18 @@
-<p>寄付情報を追加</p>
+<%= form_with(model: @user, url: donations_path, local: true) do |form| %>
+  <h1>ユーザー名を入力</h1>
+  <div class="field">
+    <%= form.label :name, "名前（全角）" %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :name_reading, "フリカナ（全角カタカナ）" %>
+    <%= form.text_field :name_reading %>
+  </div>
+  <div class="field">
+    <%= form.label :nickname, "ニックネーム（半角英数）" %>
+    <%= form.text_field :nickname %>
+  </div>
+  <div class="actions">
+    <%= form.submit "寄付する" %>
+  </div>
+<% end %>
