@@ -8,7 +8,8 @@ class DonationsController < ApplicationController
 
   def create
     @user = User.new(donation_params)
-    if @user.save
+    if @user.valid?
+      @user.save
       redirect_to action: :index
     else
       render action: :new
