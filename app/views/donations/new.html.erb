@@ -13,7 +13,33 @@
     <%= form.label :nickname, "ニックネーム（半角英数）" %>
     <%= form.text_field :nickname %>
   </div>
+  <h1>住所を入力</h1>
+  <div class="field">
+    <%= form.label :postal_code, "郵便番号（ハイフンを含む）" %>
+    <%= form.text_field :postal_code %>
+  </div>
+  <div class="field">
+    <%= form.label :city, "市町村（任意）" %>
+    <%= form.text_field :city %>
+  </div>
+  <div class="field">
+    <%= form.label :house_number, "番地（任意）" %>
+    <%= form.text_field :house_number %>
+  </div>
+  <div class="field">
+    <%= form.label :building_name, "建物名（任意）" %>
+    <%= form.text_field :building_name %>
+  </div>
+
+  <h1>寄付金</h1>
+  <div class="field">
+    <%= form.label :price, "いくら寄付しますか？（1〜1000000円、半角）" %>
+    <%= form.text_field :price %>
+    <%= "円" %>
+  </div>
+
   <div class="actions">
     <%= form.submit "寄付する" %>
   </div>
+  
 <% end %>
