@@ -19,6 +19,10 @@
     <%= form.text_field :postal_code %>
   </div>
   <div class="field">
+   <%= form.label :prefecture, "都道府県" %>
+   <%= form.collection_select :prefecture, Prefecture.all, :id, :name, {} %>
+  </div>
+  <div class="field">
     <%= form.label :city, "市町村（任意）" %>
     <%= form.text_field :city %>
   </div>
@@ -41,5 +45,5 @@
   <div class="actions">
     <%= form.submit "寄付する" %>
   </div>
-  
+
 <% end %>
