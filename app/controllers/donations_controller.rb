@@ -3,6 +3,7 @@ class DonationsController < ApplicationController
   end
 
   def new
+    @user_donation = UserDonation.new
   end
 
   def create
