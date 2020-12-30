@@ -7,10 +7,13 @@ class DonationsController < ApplicationController
   end
 
   def create
-    user = User.create(user_params)
-    Address.create(address_params(user))
-    Donation.create(donation_params(user))
-    redirect_to action: :index
+    @user_donation = UserDonation.new(donation_params)   #「UserDonation」に編集
+    if @user_donation.valid?
+      @user_donation.save
+      redirect_to action: :index
+    else
+      render action: :new
+    end
   end
 
   private
