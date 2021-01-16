@@ -3,11 +3,11 @@ class  DonationsController < ApplicationController
   end
  
   def new
-    @user_donation = UserDonation.new   #「UserDonation」に編集
+    @user_donation = UserDonation.new
   end
  
   def create
-    @user_donation = UserDonation.new(donation_params)   #「UserDonation」に編集
+    @user_donation = UserDonation.new(donation_params)
      if @user_donation.valid?
        @user_donation.save
        redirect_to action: :index
